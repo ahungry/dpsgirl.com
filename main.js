@@ -29,7 +29,7 @@ function poke () {
 
 function init() {
   setInterval(speak, 1000)
-  setInterval(blink, 100)
+  // setInterval(blink, 100)
 }
 
 document.onload = init()
