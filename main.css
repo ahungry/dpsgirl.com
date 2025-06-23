@@ -1,0 +1,23 @@
+html {
+  background: #000;
+  color: #ff33cc;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-weight:bold;
+  padding-left: 10px;
+}
+body {
+  margin:auto;
+}
+
+a {
+  color: #66ccff;
+}
+
+.setup {
+  font-size: 10px;
+}
+
+.warn {
+  color: #ffff00;
+  font-size: 10px;
+}
