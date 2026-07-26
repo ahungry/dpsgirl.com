@@ -35,3 +35,22 @@ a {
 .querybox textarea {
   display: block;
 }
+
+nav {
+  background: #333;
+  display: block;
+  font-family: arial;
+  font-size: 0.8rem;
+  padding: 4px;
+}
+
+nav a {
+  background: #000;
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}

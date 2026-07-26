@@ -5,11 +5,43 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Parser</title>
+    <style>
+     .query {
+       min-height: 70px;
+       padding: 10px;
+       width: 90%;
+     }
+
+     .querybox {
+       padding: 40px;
+     }
+
+     .querybox textarea {
+       display: block;
+     }
+     #results {
+       background: #333;
+       color: lime;
+       height: 100px;
+       overflow: scroll;
+       padding: 40px;
+     }
+    </style>
   </head>
   <body>
+    <h1>DPS Girl</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/">Local Parser</a>
+    </nav>
     <p>
       Upload your log file (all local - it does not send to server):
     </p>
+
+    <pre id="results">
+Upload a log file to get started (it never sends to server)
+    </pre>
+
     <input type="file" id="fileInput" />
 
     <div class="querybox">
@@ -19,20 +51,31 @@ SELECT sum(val)/count(*) as avg
 FROM dmg
 WHERE typ='pierce'
 AND tar = 'Drelzna'
-</textarea>
-    <button class="run">run</button>
+      </textarea>
+      <button class="run">run</button>
     </div>
 
     <div class="querybox">
       Check a sample of imported log entries:
       <textarea class="query">
 SELECT * FROM dmg LIMIT 5;
-</textarea>
-    <button class="run">run</button>
+      </textarea>
+      <button class="run">run</button>
     </div>
 
-    <pre id="results">
-    </pre>
+    <div style="color:#000;">
+      <div
+        style="font-size:0.9em;position: fixed; right: 190px; bottom: 290px;z-index:2;font-family: 'Comic Sans MS', 'Comic Sans', cursive;font-weight:bold;rotate:340deg;z-index:3;">
+        <span id="dps" style="font-size:1.8em;">Turn your log into SQL!</span>
+      </div>
+      <img src="bubble.png"
+           onclick="poke()"
+           style="width:350px;position:fixed;bottom:145px;right:125px;z-index:2;" />
+      <img id="dps-girl" src="girl.gif"
+           onclick="poke()"
+           style="width:260px;position:fixed;bottom:0px;right:0px;" />
+    </div>
+
     <script src="jswasm/sqlite3-worker1-promiser.js"></script>
     <script src="parse.js"></script>
   </body>
