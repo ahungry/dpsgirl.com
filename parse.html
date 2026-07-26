@@ -1,16 +1,36 @@
 <!doctype html>
 <html lang="en-us">
   <head>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Parser</title>
   </head>
   <body>
-    Look in dev console (f12) on window.db and in parse.js file
-    <div>
-      <textarea id="query">select * from dmg</textarea>
+    <p>
+      Upload your log file (all local - it does not send to server):
+    </p>
+    <input type="file" id="fileInput" />
+
+    <div class="querybox">
+      Check the average damage per hit:
+      <textarea class="query">
+SELECT sum(val)/count(*) as avg
+FROM dmg
+WHERE typ='pierce'
+AND tar = 'Drelzna'
+</textarea>
+    <button class="run">run</button>
     </div>
-    <button id="run">run</button>
+
+    <div class="querybox">
+      Check a sample of imported log entries:
+      <textarea class="query">
+SELECT * FROM dmg LIMIT 5;
+</textarea>
+    <button class="run">run</button>
+    </div>
+
     <pre id="results">
     </pre>
     <script src="jswasm/sqlite3-worker1-promiser.js"></script>

@@ -21,3 +21,17 @@ a {
   color: #ffff00;
   font-size: 10px;
 }
+
+.query {
+  min-height: 70px;
+  padding: 10px;
+  width: 90%;
+}
+
+.querybox {
+  padding: 40px;
+}
+
+.querybox textarea {
+  display: block;
+}
